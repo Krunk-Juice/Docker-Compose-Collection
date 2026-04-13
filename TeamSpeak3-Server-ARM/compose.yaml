@@ -7,6 +7,8 @@ services:
     restart: unless-stopped
     networks:
       - teamspeak-network
+#      teamspeak-network:
+#        ipv4_address: 172.27.0.1
     entrypoint: ["/bin/sh", "-c", "sleep 240 && exec /init"]
     environment:
       - TS_UPDATE=1
@@ -21,3 +23,7 @@ services:
 networks:
   teamspeak-network:
     name: teamspeak-network
+    driver: bridge
+#    ipam:
+#      config:
+#        - subnet: 172.27.0.0/24

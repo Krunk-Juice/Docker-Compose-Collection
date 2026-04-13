@@ -1,10 +1,13 @@
 Grafana-Alloy/config.alloy
 Grafana-Alloy/config.alloy.bak
+Ladder
 Linkwarden/data/
 Linkwarden/meili_data/
 Linkwarden/pgdata/
+Marreta
 Mealie/mealie-pgdata/
 Muse/muse/
 NGINX-Proxy-Manager/data/
 NGINX-Proxy-Manager/letsencrypt/
 Suivi-Bourse/config.yaml
+WireGuard-LinuxServer.io
