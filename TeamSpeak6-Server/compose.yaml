@@ -4,9 +4,6 @@ services:
     image: teamspeaksystems/teamspeak6-server:latest
     container_name: TeamSpeak6_Server
     hostname: TeamSpeak6_Server
-    restart: unless-stopped
-    networks:
-      - teamspeak-network
     ports:
       - "9987:9987/udp"   # Default voice port
       - "30033:30033/tcp" # File transfer port
@@ -33,6 +30,10 @@ services:
       - ${HOME}/.teamspeak/.env
     volumes:
       - ${HOME}/.teamspeak/teamspeak-data:/var/tsserver
+    networks:
+      - teamspeak-network
+      - mariadb-network
+    restart: unless-stopped
     depends_on:
       mariadb:
         condition: service_healthy
@@ -50,9 +51,9 @@ services:
       - ${HOME}/.teamspeak/.dbenv
     volumes:
       - ${HOME}/.teamspeak/mariadb-data:/var/lib/mysql
-    restart: unless-stopped
     networks:
-      - teamspeak-network
+      - mariadb-network
+    restart: unless-stopped
     healthcheck:
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
       start_period: 10s
@@ -70,3 +71,9 @@ networks:
   teamspeak-network:
     name: teamspeak-network
     driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: ts-bridge
+  mariadb-network:
+    name: mariadb-network
+    driver: bridge
+    internal: true
