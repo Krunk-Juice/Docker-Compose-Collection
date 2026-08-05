@@ -3,7 +3,6 @@ services:
   mealie:
     image: ghcr.io/mealie-recipes/mealie:latest
     container_name: Mealie
-    hostname: Mealie
     labels:
       io.portainer.accesscontrol.users: admin
     ports:
@@ -17,6 +16,9 @@ services:
         condition: service_healthy
     volumes:
       - mealie-data:/app/data/
+    networks:
+      - mealie-network
+      - postgresdb-network
     environment:
     # Set Backend ENV Variables Here
       - ALLOW_SIGNUP=false
@@ -61,6 +63,8 @@ services:
       io.portainer.accesscontrol.users: admin
     volumes:
       - ${HOME}/.mealie/mealie-pgdata:/var/lib/postgresql/data
+    networks:
+      - postgresdb-network
     environment:
       POSTGRES_USER: /run/secrets/POSTGRES_USER
       POSTGRES_PASSWORD: /run/secrets/POSTGRES_PASSWORD
@@ -78,6 +82,17 @@ volumes:
     driver: local
   mealie-pgdata:
     driver: local
+
+networks:
+  mealie-network:
+    name: mealie-network
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: mealie-bridge
+  postgresdb-network:
+    name: postgresdb-network
+    driver: bridge
+    internal: true
 
 secrets:
   POSTGRES_USER:
