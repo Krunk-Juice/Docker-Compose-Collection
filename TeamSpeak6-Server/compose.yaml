@@ -32,7 +32,7 @@ services:
       - ${HOME}/.teamspeak/teamspeak-data:/var/tsserver
     networks:
       - teamspeak-network
-      - mariadb-network
+      - teamspeakdb-network
     restart: unless-stopped
     depends_on:
       mariadb:
@@ -52,7 +52,7 @@ services:
     volumes:
       - ${HOME}/.teamspeak/mariadb-data:/var/lib/mysql
     networks:
-      - mariadb-network
+      - teamspeakdb-network
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
@@ -73,7 +73,7 @@ networks:
     driver: bridge
     driver_opts:
       com.docker.network.bridge.name: ts-bridge
-  mariadb-network:
-    name: mariadb-network
+  teamspeakdb-network:
+    name: teamspeakdb-network
     driver: bridge
     internal: true
