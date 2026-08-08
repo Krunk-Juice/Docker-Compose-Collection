@@ -14,7 +14,6 @@ services:
     env_file:
       - ${HOME}/.tailscale/.env
     volumes:
-      - tailscale-data:/var/lib/tailscale
       - tailscale-config:/config
       - ${HOME}/.tailscale/state:/var/lib/tailscale
     devices:
