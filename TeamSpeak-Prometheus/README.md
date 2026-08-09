@@ -21,3 +21,7 @@ docker images
 ```
 
 You should see the newly created image listed in the output.
+
+OR
+
+Run `ts-prometheus-build.py`
