@@ -4,7 +4,7 @@ services:
   muse:
     image: ghcr.io/museofficial/muse:latest
     container_name: Muse
-    hostname: Muse
+    hostname: "Raspberry Pi 4"
     restart: unless-stopped
     volumes:
       - ${HOME}/.muse/data:/data

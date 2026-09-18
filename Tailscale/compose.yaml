@@ -3,7 +3,7 @@ services:
   tailscale:
     image: tailscale/tailscale:latest
     container_name: Tailscale
-    hostname: RaspberryPi4
+    hostname: "Raspberry Pi 4"
     network_mode: host
     privileged: true
     environment:

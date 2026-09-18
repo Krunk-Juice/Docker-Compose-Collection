@@ -1,9 +1,9 @@
 #version: "3"
 services:
   promfile-server:
-    image: python:3.9-slim
+    image: python:3.14-slim
     container_name: PromFile-Server
-    hostname: PromFile-Server
+    hostname: "Raspberry Pi 4"
     restart: unless-stopped
     working_dir: /data
     volumes:

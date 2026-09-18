@@ -8,7 +8,7 @@ services:
       - ${HOME}/.linkwarden/pgdata:/var/lib/postgresql/data
   linkwarden:
     container_name: Linkwarden
-    #hostname: "Raspberry Pi 4"
+    hostname: "Raspberry Pi 4"
     env_file:
       - ${HOME}/.linkwarden/.env
     #environment:

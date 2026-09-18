@@ -2,7 +2,7 @@
 services:
   scrutiny:
     container_name: Scrutiny
-    hostname: Scrutiny
+    hostname: "Raspberry Pi 4"
     image: ghcr.io/analogj/scrutiny:master-omnibus
     restart: unless-stopped
     cap_add:

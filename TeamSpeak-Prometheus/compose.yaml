@@ -2,7 +2,7 @@ services:
   teamspeak-prometheus:
     image: teamspeak-prometheus:latest
     container_name: TeamSpeak-Prometheus
-    hostname: TeamSpeak-Prometheus
+    hostname: "Raspberry Pi 4"
     restart: unless-stopped
     networks:
       - teamspeak-network

@@ -1,7 +1,7 @@
 services:
   suivi-bourse:
     container_name: Suivi-Bourse
-    hostname: Suivi-Bourse
+    hostname: "Raspberry Pi 4"
     environment:
       - SB_SCRAPING_INTERVAL=${SCRAPING_INTERVAL}
     image: ghcr.io/pbrissaud/suivi-bourse-app:latest

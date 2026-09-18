@@ -3,7 +3,7 @@ services:
     changedetection:
       image: ghcr.io/dgtlmoon/changedetection.io
       container_name: changedetection
-      hostname: changedetection
+      hostname: "Raspberry Pi 4"
       volumes:
         - changedetection-data:/datastore
 # Configurable proxy list support, see https://github.com/dgtlmoon/changedetection.io/wiki/Proxy-configuration#proxy-list-support

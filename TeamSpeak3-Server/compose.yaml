@@ -2,7 +2,7 @@
 services:
   teamspeak:
     container_name: TeamSpeak3_Server
-    hostname: TeamSpeak3_Server
+    hostname: "Raspberry Pi 4"
     image: ertagh/teamspeak3-server:latest-box
     restart: unless-stopped
     networks:

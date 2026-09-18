@@ -2,7 +2,7 @@
 services:
   pihole:
     container_name: Pi-hole
-#    hostname: Pi-hole
+    hostname: "Raspberry Pi 4"
     image: pihole/pihole:latest
     network_mode: host
 #    ports:

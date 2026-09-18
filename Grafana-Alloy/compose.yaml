@@ -2,7 +2,7 @@
 services:
   alloy:
     container_name: Grafana-Alloy
-    hostname: Grafana-Alloy
+    hostname: "Raspberry Pi 4"
     image: "grafana/alloy:latest"
     restart: unless-stopped
     volumes:

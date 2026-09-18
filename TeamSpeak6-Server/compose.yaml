@@ -3,7 +3,7 @@ services:
   teamspeak:
     image: teamspeaksystems/teamspeak6-server:latest
     container_name: TeamSpeak6_Server
-    hostname: TeamSpeak6_Server
+    hostname: "Raspberry Pi 4"
     ports:
       - "9987:9987/udp"   # Default voice port
       - "30033:30033/tcp" # File transfer port

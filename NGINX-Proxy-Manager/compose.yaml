@@ -1,7 +1,7 @@
 services:
   nginx-proxy-manager:
     container_name: NGINX-Proxy-Manager
-    #hostname: "Raspberry Pi 4"
+    hostname: "Raspberry Pi 4"
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
     ports:
